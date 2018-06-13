@@ -13,7 +13,7 @@ print('API KEY HAS BEEN RECOGNIZED')
 
 symbols=[] ##Empty list to take in multiple stocks
 while True: #Method derived from class to do preliminary stock symbol check. Only checking for numeric symbols
-    symbol = input("Please enter a stock symbol (e.g. MSFT)")
+    symbol = input("Please enter a stock symbol (e.g. MSFT). When you are done, please input 'Done' ")
     if symbol=='Done':
         break
     else:
