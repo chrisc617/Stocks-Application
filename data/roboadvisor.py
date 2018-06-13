@@ -70,7 +70,7 @@ for i in symbols:  #This for loop will run for each individual stock in the list
     data = response_body["Time Series (Daily)"]
     dates = list(data)
     print(f'Stock Symbol is: {metadata["2. Symbol"]}')
-    print(f'Runtime:{time.strftime("%c")}')
+    print(f'Runtime:{time.strftime("%c")}') #Referenced https://stackoverflow.com/questions/415511/how-to-get-the-current-time-in-python
     print(f'Data last refreshed: {metadata["3. Last Refreshed"]}')
     latest_daily_data = data[dates[0]]
 
