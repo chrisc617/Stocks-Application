@@ -38,7 +38,7 @@ for i in symbols:  #This for loop will run for each individual stock in the list
 # parse the JSON response
     response_body = json.loads(response.text)
 
-    csv_file_path = f"prices_{symbol}.csv"
+    file_name = f"data/prices_{symbol}.csv"
 
     datas = response_body["Time Series (Daily)"]
     # except KeyError:
@@ -50,6 +50,7 @@ for i in symbols:  #This for loop will run for each individual stock in the list
 
     # print(dataslist[i],stocklistdatas[dataslist[i]])
     # print(datas['open'])
+    csv_filepath = os.path.join(os.path.dirname(__file__), "..", file_name)
     with open(csv_file_path, "w") as csv_file: #leveraged from csv module
         writer = csv.DictWriter(csv_file, fieldnames=["timestamp", "open","high","low","close","volume"])
         writer.writeheader() # uses fieldnames set above
